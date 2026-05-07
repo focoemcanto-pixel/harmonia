@@ -45,7 +45,7 @@ export default function VideoFacade({ videoId, title, startSeconds, thumbnailSrc
       type="button"
       aria-label={`Reproduzir vídeo: ${title}`}
     >
-      <img src={thumb} alt={title} />
+      <img src={thumb} alt={title} loading="lazy" decoding="async" />
       <div className="video-play-btn">
         <svg viewBox="0 0 68 48" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect width="68" height="48" rx="10" fill="#FF0000" />
