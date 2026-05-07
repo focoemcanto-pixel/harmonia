@@ -13,13 +13,18 @@ function sanitizeVideoId(videoId: string) {
   return /^[\w-]{11}$/.test(videoId) ? videoId : ''
 }
 
+function sanitizeThumbnailSrc(thumbnailSrc?: string) {
+  return thumbnailSrc?.startsWith('/') ? thumbnailSrc : undefined
+}
+
 export default function VideoFacade({ videoId, title, startSeconds, thumbnailSrc }: Props) {
   const [playing, setPlaying] = useState(false)
   const safeVideoId = sanitizeVideoId(videoId)
+  const safeThumbnailSrc = sanitizeThumbnailSrc(thumbnailSrc)
   const src = safeVideoId
     ? `https://www.youtube.com/embed/${safeVideoId}?autoplay=1${startSeconds ? `&start=${startSeconds}` : ''}`
     : ''
-  const thumb = thumbnailSrc ?? (safeVideoId ? `https://img.youtube.com/vi/${safeVideoId}/maxresdefault.jpg` : '')
+  const thumb = safeThumbnailSrc ?? (safeVideoId ? `https://img.youtube.com/vi/${safeVideoId}/maxresdefault.jpg` : '')
 
   if (playing && src) {
     return (

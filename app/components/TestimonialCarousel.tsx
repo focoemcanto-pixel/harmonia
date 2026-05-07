@@ -1,11 +1,16 @@
 'use client'
 
-import { useRef } from 'react'
+import { useEffect, useRef } from 'react'
 
 const testimonials = [1, 2, 3, 4, 5, 6, 7]
 
 export default function TestimonialCarousel() {
   const trackRef = useRef<HTMLDivElement>(null)
+  const mobileQueryRef = useRef<MediaQueryList | null>(null)
+
+  useEffect(() => {
+    mobileQueryRef.current = window.matchMedia('(max-width: 768px)')
+  }, [])
 
   const scroll = (direction: number) => {
     const element = trackRef.current
@@ -14,7 +19,7 @@ export default function TestimonialCarousel() {
       return
     }
 
-    const isMobile = typeof window !== 'undefined' && window.matchMedia('(max-width: 768px)').matches
+    const isMobile = mobileQueryRef.current?.matches ?? false
     const distance = isMobile ? element.offsetWidth : element.offsetWidth / 3
 
     element.scrollBy({ left: direction * distance, behavior: 'smooth' })
@@ -31,6 +36,7 @@ export default function TestimonialCarousel() {
             <img
               src={`/images/depoimentos/depoimento-${testimonial}.webp`}
               alt={`Depoimento ${testimonial}`}
+              loading="lazy"
             />
           </div>
         ))}
