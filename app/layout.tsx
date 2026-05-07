@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Script from 'next/script'
+import UtmLinker from './components/UtmLinker'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -17,6 +18,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         {children}
+
+        {/* Propagação de UTM para links de checkout — remover <UtmLinker /> para desativar */}
+        <UtmLinker />
 
         {/* Google Analytics — G-EVPM4JC4WN */}
         <Script
