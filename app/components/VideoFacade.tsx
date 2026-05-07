@@ -14,7 +14,7 @@ export default function VideoFacade({ videoId, title, startSeconds }: Props) {
   const thumbSrc = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`
   const play = () => setPlaying(true)
   const onKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
-    if (event.key === 'Enter' || event.key === ' ') {
+    if (event.key === 'Enter' || event.key === ' ' || event.key === 'Spacebar') {
       event.preventDefault()
       play()
     }
