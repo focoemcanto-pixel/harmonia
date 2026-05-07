@@ -10,8 +10,9 @@ interface Props {
 
 export default function VideoFacade({ videoId, title, startSeconds }: Props) {
   const [playing, setPlaying] = useState(false)
+  const [thumbFallback, setThumbFallback] = useState(false)
   const embedSrc = `https://www.youtube.com/embed/${videoId}?autoplay=1${startSeconds ? `&start=${startSeconds}` : ''}`
-  const thumbSrc = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`
+  const thumbSrc = `https://img.youtube.com/vi/${videoId}/${thumbFallback ? 'hqdefault' : 'maxresdefault'}.jpg`
   const play = () => setPlaying(true)
   const onKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
     if (event.key === 'Enter' || event.key === ' ') {
@@ -38,7 +39,7 @@ export default function VideoFacade({ videoId, title, startSeconds }: Props) {
         />
       ) : (
         <>
-          <img src={thumbSrc} alt={title} />
+          <img src={thumbSrc} alt={title} onError={() => setThumbFallback(true)} />
           <div className="video-play-btn">
             <svg viewBox="0 0 68 48" xmlns="http://www.w3.org/2000/svg">
               <rect width="68" height="48" rx="10" fill="#FF0000" />
