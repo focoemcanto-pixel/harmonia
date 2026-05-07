@@ -5,12 +5,13 @@ interface Props {
   videoId: string
   title: string
   startSeconds?: number
+  thumbnailSrc?: string
 }
 
-export default function VideoFacade({ videoId, title, startSeconds }: Props) {
+export default function VideoFacade({ videoId, title, startSeconds, thumbnailSrc }: Props) {
   const [playing, setPlaying] = useState(false)
   const embedSrc = `https://www.youtube.com/embed/${videoId}?autoplay=1${startSeconds ? `&start=${startSeconds}` : ''}`
-  const thumbSrc = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`
+  const thumbSrc = thumbnailSrc || `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`
 
   return (
     <div className="video-facade" onClick={() => setPlaying(true)}>
