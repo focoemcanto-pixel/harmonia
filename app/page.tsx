@@ -74,7 +74,7 @@ export default function Home() {
               />
             ) : (
               <>
-                <img src="https://img.youtube.com/vi/F1pYjGMCqAM/maxresdefault.jpg" alt="Como dividir voz" width="1280" height="720" />
+                <img src="https://img.youtube.com/vi/F1pYjGMCqAM/hqdefault.jpg" alt="Como dividir voz" width="1280" height="720" />
                 <div className="video-play-btn">
                   <svg viewBox="0 0 68 48" fill="none"><rect width="68" height="48" rx="10" fill="#FF0000" /><polygon points="28,16 28,32 46,24" fill="white" /></svg>
                 </div>
@@ -197,7 +197,7 @@ export default function Home() {
               />
             ) : (
               <>
-                <img src="https://img.youtube.com/vi/yb-6zZv763k/maxresdefault.jpg" alt="Viagem pelo curso" width="1280" height="720" />
+                <img src="https://img.youtube.com/vi/yb-6zZv763k/hqdefault.jpg" alt="Viagem pelo curso" width="1280" height="720" />
                 <div className="video-play-btn">
                   <svg viewBox="0 0 68 48" fill="none"><rect width="68" height="48" rx="10" fill="#FF0000" /><polygon points="28,16 28,32 46,24" fill="white" /></svg>
                 </div>
