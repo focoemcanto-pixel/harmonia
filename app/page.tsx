@@ -1,7 +1,9 @@
+import TestimonialCarousel from './components/TestimonialCarousel'
+import TrustBadges from './components/TrustBadges'
+import VideoFacade from './components/VideoFacade'
+
 const checkoutUrl = 'https://pay.kiwify.com.br/7FrQZOt'
 const whatsappUrl = 'https://wa.me/5571999999999'
-const videoComoDividirUrl = 'https://www.youtube.com/embed/F1pYjGMCqAM?start=7'
-const videoViagemCursoUrl = 'https://www.youtube.com/embed/yb-6zZv763k'
 
 const benefits = [
   'Afinação firme e precisa.',
@@ -24,7 +26,7 @@ const faqs = [
 export default function Home() {
   return (
     <main>
-      <a className="whatsapp" href={whatsappUrl} target="_blank" aria-label="WhatsApp">☘</a>
+      <a className="whatsapp" href={whatsappUrl} target="_blank" rel="noreferrer" aria-label="WhatsApp">☘</a>
 
       <section className="countdown">
         <div className="count-box"><strong>00</strong><span>Minutos</span></div>
@@ -38,23 +40,16 @@ export default function Home() {
           <h1>Aprenda a Dividir Voz no Louvor com Segurança e Naturalidade, mesmo sem saber teoria musical</h1>
           <p className="lead">Um treinamento prático para desenvolver percepção, afinação e independência vocal — e finalmente cantar segunda voz com mais confiança no ministério de louvor.</p>
 
-          <div className="video-wrapper">
-            <iframe
-              src={videoComoDividirUrl}
-              title="Como dividir voz"
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            />
-          </div>
+          <VideoFacade
+            videoId="F1pYjGMCqAM"
+            title="Como dividir voz"
+            startSeconds={7}
+            thumbnailSrc="/images/videos/thumb-como-dividir-voz.webp"
+          />
 
-          <a className="button primary wide" href={checkoutUrl} target="_blank">EU QUERO AGORA</a>
+          <a className="button primary wide" href={checkoutUrl} target="_blank" rel="noreferrer">EU QUERO AGORA</a>
 
-          <div className="trust-row">
-            <div>▣ <strong>Acesso Imediato</strong></div>
-            <div>☆ <strong>7 Dias de Garantia</strong></div>
-            <div>▣ <strong>Pagamento Seguro</strong></div>
-          </div>
+          <TrustBadges />
         </div>
       </section>
 
@@ -83,7 +78,7 @@ export default function Home() {
             <p><strong>Passo 2:</strong> aprender a construir a segunda voz.</p>
             <p><strong>Passo 3:</strong> desenvolver sua intuição vocal.</p>
             <div className="outline-card">Os exercícios são práticos e pensados para situações reais de canto, ajudando você a reconhecer caminhos harmônicos e aplicar as vozes com mais segurança.</div>
-            <a className="button primary wide" href={checkoutUrl} target="_blank">QUERO APRENDER A DIVIDIR</a>
+            <a className="button primary wide" href={checkoutUrl} target="_blank" rel="noreferrer">QUERO APRENDER A DIVIDIR</a>
           </div>
         </div>
       </section>
@@ -102,15 +97,7 @@ export default function Home() {
       <section className="section testimonials">
         <div className="container">
           <h2>Veja os <span>Resultados que alguns dos nossos alunos</span> já alcançaram</h2>
-          <div className="testimonial-grid">
-            <img src="/images/depoimentos/depoimento-1.webp" alt="Depoimento 1" />
-            <img src="/images/depoimentos/depoimento-2.webp" alt="Depoimento 2" />
-            <img src="/images/depoimentos/depoimento-3.webp" alt="Depoimento 3" />
-            <img src="/images/depoimentos/depoimento-4.webp" alt="Depoimento 4" />
-            <img src="/images/depoimentos/depoimento-5.webp" alt="Depoimento 5" />
-            <img src="/images/depoimentos/depoimento-6.webp" alt="Depoimento 6" />
-            <img src="/images/depoimentos/depoimento-7.webp" alt="Depoimento 7" />
-          </div>
+          <TestimonialCarousel />
         </div>
       </section>
 
@@ -120,21 +107,17 @@ export default function Home() {
           <div className="benefit-grid">
             {benefits.map((item) => <div className="benefit" key={item}>✅ <p>{item}</p></div>)}
           </div>
-          <a className="button primary centered" href={checkoutUrl} target="_blank">QUERO APRENDER A DIVIDIR</a>
+          <a className="button primary centered" href={checkoutUrl} target="_blank" rel="noreferrer">QUERO APRENDER A DIVIDIR</a>
         </div>
       </section>
 
       <section className="section dark center access-section">
         <div className="container narrow">
-          <div className="video-wrapper">
-            <iframe
-              src={videoViagemCursoUrl}
-              title="Viagem pelo curso"
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            />
-          </div>
+          <VideoFacade
+            videoId="yb-6zZv763k"
+            title="Viagem pelo curso"
+            thumbnailSrc="/images/videos/thumb-viagem-pelo-curso.webp"
+          />
           <h2>Aprenda a <span>qualquer hora e em qualquer lugar!</span></h2>
           <h3>ACESSO VITALÍCIO</h3>
           <div className="trust-row compact"><div>✅ 7 Módulos Gravados</div><div>✅ Treinamento 100% online</div><div>✅ Aulas direto ao ponto</div></div>
@@ -155,7 +138,7 @@ export default function Home() {
               <li>✓ Atividades práticas para o dia a dia</li>
               <li>✓ Acesso vitalício</li>
             </ul>
-            <a className="button primary wide" href={checkoutUrl} target="_blank">QUERO APRENDER AGORA</a>
+            <a className="button primary wide" href={checkoutUrl} target="_blank" rel="noreferrer">QUERO APRENDER AGORA</a>
           </div>
           <div className="logo-offer"><img src="/images/oferta/logo-foco-em-harmonia.webp" alt="Foco em Harmonia" /><p>Comece a desenvolver sua habilidade para dividir voz e viva essa transformação hoje mesmo!</p></div>
         </div>
@@ -170,7 +153,7 @@ export default function Home() {
 
       <section className="section mentor-section">
         <div className="container split">
-          <div><h2>Seu mentor vocal nessa jornada será <span>Marcos Cruz</span></h2><p>Marcos Cruz é músico profissional e professor de canto, técnica vocal e piano com mais de 15 anos de experiência. Já ajudou centenas de alunos a destravarem suas vozes e atua com treinamento vocal para grupos de louvor.</p><a className="button primary" href={checkoutUrl} target="_blank">FAZER PARTE</a></div>
+          <div><h2>Seu mentor vocal nessa jornada será <span>Marcos Cruz</span></h2><p>Marcos Cruz é músico profissional e professor de canto, técnica vocal e piano com mais de 15 anos de experiência. Já ajudou centenas de alunos a destravarem suas vozes e atua com treinamento vocal para grupos de louvor.</p><a className="button primary" href={checkoutUrl} target="_blank" rel="noreferrer">FAZER PARTE</a></div>
           <img className="mentor-img" src="/images/mentor/marcos-cruz.webp" alt="Marcos Cruz" />
         </div>
       </section>
