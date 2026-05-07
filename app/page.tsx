@@ -156,16 +156,24 @@ export default function Home() {
           </div>
           <div className="offer-price-block">
             <p className="offer-discount-badge">🔥 75% OFF</p>
-            <p className="old-price"><s>R$ 397,00</s></p>
-            <p className="price-drop-arrow" aria-hidden="true">▼</p>
-            <div className="price-installment">
-              <span className="price-times">12x</span>
-              <span className="price-value">R$&nbsp;10,13</span>
-            </div>
-            <p className="cash-price">ou <strong>R$ 97,00</strong> à vista</p>
-            <p className="offer-savings">
-              Você economiza {new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" }).format(397 - 97)}
-            </p>
+            {(() => {
+              const originalPrice = 397;
+              const currentPrice = 97;
+              const currencyFormatter = new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" });
+
+              return (
+                <>
+                  <p className="old-price"><s>{currencyFormatter.format(originalPrice)}</s></p>
+                  <p className="price-drop-arrow" aria-hidden="true">▼</p>
+                  <div className="price-installment">
+                    <span className="price-times">12x</span>
+                    <span className="price-value">R$&nbsp;10,13</span>
+                  </div>
+                  <p className="cash-price">ou <strong>{currencyFormatter.format(currentPrice)}</strong> à vista</p>
+                  <p className="offer-savings">Você economiza {currencyFormatter.format(originalPrice - currentPrice)}</p>
+                </>
+              );
+            })()}
           </div>
           <ul className="offer-list">
             <li>✓ 7 módulos de aulas</li>
