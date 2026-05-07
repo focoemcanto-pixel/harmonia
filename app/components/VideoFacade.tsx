@@ -24,11 +24,12 @@ export default function VideoFacade({ videoId, title, startSeconds }: Props) {
       className="video-facade"
       onClick={play}
       onKeyDown={(event) => {
-        if (event.key === 'Enter' || event.key === ' ') {
+        if (event.key === 'Enter' || event.code === 'Space') {
           event.preventDefault()
           play()
         }
       }}
+      aria-label={`Play video: ${title}`}
       role="button"
       tabIndex={0}
     >

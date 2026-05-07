@@ -2,12 +2,14 @@
 
 import { useRef } from 'react'
 
+const SLIDES_PER_VIEW = 3
+
 export default function TestimonialCarousel() {
   const trackRef = useRef<HTMLDivElement | null>(null)
 
   const scroll = (dir: number) => {
     const el = trackRef.current
-    if (el) el.scrollBy({ left: dir * (el.clientWidth / 3), behavior: 'smooth' })
+    if (el) el.scrollBy({ left: dir * (el.clientWidth / SLIDES_PER_VIEW), behavior: 'smooth' })
   }
 
   return (
