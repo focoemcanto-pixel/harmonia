@@ -17,9 +17,21 @@ export default function VideoFacade({ videoId, title, startSeconds }: Props) {
   const [playing, setPlaying] = useState(false)
   const embedSrc = `https://www.youtube.com/embed/${videoId}?autoplay=1${startSeconds ? `&start=${startSeconds}` : ''}`
   const thumbSrc = thumbnailMap[videoId] ?? `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`
+  const play = () => setPlaying(true)
 
   return (
-    <div className="video-facade" onClick={() => setPlaying(true)}>
+    <div
+      className="video-facade"
+      onClick={play}
+      onKeyDown={(event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault()
+          play()
+        }
+      }}
+      role="button"
+      tabIndex={0}
+    >
       {playing ? (
         <iframe
           src={embedSrc}
