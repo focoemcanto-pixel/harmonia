@@ -1,7 +1,8 @@
+import TestimonialCarousel from './components/TestimonialCarousel'
+import VideoFacade from './components/VideoFacade'
+
 const checkoutUrl = 'https://pay.kiwify.com.br/7FrQZOt'
 const whatsappUrl = 'https://wa.me/5571999999999'
-const videoComoDividirUrl = 'https://www.youtube.com/embed/F1pYjGMCqAM?start=7'
-const videoViagemCursoUrl = 'https://www.youtube.com/embed/yb-6zZv763k'
 
 const benefits = [
   'Afinação firme e precisa.',
@@ -38,22 +39,25 @@ export default function Home() {
           <h1>Aprenda a Dividir Voz no Louvor com Segurança e Naturalidade, mesmo sem saber teoria musical</h1>
           <p className="lead">Um treinamento prático para desenvolver percepção, afinação e independência vocal — e finalmente cantar segunda voz com mais confiança no ministério de louvor.</p>
 
-          <div className="video-wrapper">
-            <iframe
-              src={videoComoDividirUrl}
-              title="Como dividir voz"
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            />
-          </div>
+          <VideoFacade videoId="F1pYjGMCqAM" title="Como dividir voz" startSeconds={7} />
 
           <a className="button primary wide" href={checkoutUrl} target="_blank">EU QUERO AGORA</a>
 
-          <div className="trust-row">
-            <div>▣ <strong>Acesso Imediato</strong></div>
-            <div>☆ <strong>7 Dias de Garantia</strong></div>
-            <div>▣ <strong>Pagamento Seguro</strong></div>
+          <div className="trust-badges">
+            <div className="trust-badge">
+              <svg className="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2" /><line x1="8" y1="20" x2="16" y2="20" /><line x1="12" y1="18" x2="12" y2="20" /></svg>
+              <span>Acesso Imediato</span>
+            </div>
+            <div className="trust-divider" />
+            <div className="trust-badge">
+              <svg className="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M12 2 14.5 8.5 22 9.3 16.7 13.8 18.3 21 12 17.3 5.7 21 7.3 13.8 2 9.3 9.5 8.5 12 2Z" /></svg>
+              <span>7 Dias de Garantia</span>
+            </div>
+            <div className="trust-divider" />
+            <div className="trust-badge">
+              <svg className="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 9.7 8 11 4.6-1.3 8-6 8-11V5l-8-3Z" /><path d="m9 12 2 2 4-4" /></svg>
+              <span>Pagamento Seguro</span>
+            </div>
           </div>
         </div>
       </section>
@@ -102,15 +106,7 @@ export default function Home() {
       <section className="section testimonials">
         <div className="container">
           <h2>Veja os <span>Resultados que alguns dos nossos alunos</span> já alcançaram</h2>
-          <div className="testimonial-grid">
-            <img src="/images/depoimentos/depoimento-1.webp" alt="Depoimento 1" />
-            <img src="/images/depoimentos/depoimento-2.webp" alt="Depoimento 2" />
-            <img src="/images/depoimentos/depoimento-3.webp" alt="Depoimento 3" />
-            <img src="/images/depoimentos/depoimento-4.webp" alt="Depoimento 4" />
-            <img src="/images/depoimentos/depoimento-5.webp" alt="Depoimento 5" />
-            <img src="/images/depoimentos/depoimento-6.webp" alt="Depoimento 6" />
-            <img src="/images/depoimentos/depoimento-7.webp" alt="Depoimento 7" />
-          </div>
+          <TestimonialCarousel />
         </div>
       </section>
 
@@ -126,15 +122,7 @@ export default function Home() {
 
       <section className="section dark center access-section">
         <div className="container narrow">
-          <div className="video-wrapper">
-            <iframe
-              src={videoViagemCursoUrl}
-              title="Viagem pelo curso"
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            />
-          </div>
+          <VideoFacade videoId="yb-6zZv763k" title="Viagem pelo curso" />
           <h2>Aprenda a <span>qualquer hora e em qualquer lugar!</span></h2>
           <h3>ACESSO VITALÍCIO</h3>
           <div className="trust-row compact"><div>✅ 7 Módulos Gravados</div><div>✅ Treinamento 100% online</div><div>✅ Aulas direto ao ponto</div></div>
