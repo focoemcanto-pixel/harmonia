@@ -18,6 +18,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         {children}
 
+        {/* Google Analytics — G-EVPM4JC4WN */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-EVPM4JC4WN"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-EVPM4JC4WN');
+          `}
+        </Script>
+
         {/* Meta Pixel — Foco em Harmonia (392375800147182) */}
         <Script id="meta-pixel" strategy="afterInteractive">
           {`
