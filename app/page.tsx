@@ -23,6 +23,37 @@ const faqs = [
 ]
 
 export default function Home() {
+  const testimonialImages = [
+    '/images/depoimentos/depoimento-1.webp',
+    '/images/depoimentos/depoimento-2.webp',
+    '/images/depoimentos/depoimento-3.webp',
+    '/images/depoimentos/depoimento-4.webp',
+    '/images/depoimentos/depoimento-5.webp',
+    '/images/depoimentos/depoimento-6.webp',
+    '/images/depoimentos/depoimento-7.webp',
+  ]
+  const [isVideo1Open, setIsVideo1Open] = useState(false)
+  const [isVideo2Open, setIsVideo2Open] = useState(false)
+  const testimonialTrackRef = useRef<HTMLDivElement>(null)
+
+  const scrollTestimonials = (direction: 'prev' | 'next') => {
+    const track = testimonialTrackRef.current
+    if (!track) return
+
+    const slide = track.querySelector('.carousel-slide') as HTMLElement | null
+    const gap = Number.parseFloat(getComputedStyle(track).gap || '0')
+    const slideWidth = slide ? slide.getBoundingClientRect().width + gap : track.offsetWidth / 3
+    const distance = direction === 'prev' ? -slideWidth : slideWidth
+    track.scrollBy({ left: distance, behavior: 'smooth' })
+  }
+
+  const openVideoOnKeyDown = (event: KeyboardEvent<HTMLDivElement>, openVideo: () => void) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault()
+      openVideo()
+    }
+  }
+
   return (
     <main>
       <a className="whatsapp" href={whatsappUrl} target="_blank" aria-label="WhatsApp">☘</a>
