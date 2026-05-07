@@ -163,7 +163,9 @@ export default function Home() {
               <span className="price-value">R$&nbsp;10,13</span>
             </div>
             <p className="cash-price">ou <strong>R$ 97,00</strong> à vista</p>
-            <p className="offer-savings">Você economiza R$ 300,00</p>
+            <p className="offer-savings">
+              Você economiza {new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" }).format(397 - 97)}
+            </p>
           </div>
           <ul className="offer-list">
             <li>✓ 7 módulos de aulas</li>
