@@ -278,7 +278,7 @@ h2 span {
 }
 
 .offer-section {
-  background: linear-gradient(135deg, #0d0d1f 0%, #1a1040 50%, #0d0d1f 100%);
+  background: linear-gradient(135deg, #0d0d1f, #1a1040);
   padding: 6rem 1.5rem;
 }
 
@@ -302,9 +302,8 @@ h2 span {
   font-size: clamp(3.5rem, 8vw, 6rem);
   color: #f5c842;
   font-weight: 800;
-  margin-bottom: 0.5rem;
-  line-height: 1;
-  text-shadow: 0 0 40px rgba(245,200,66,0.3);
+  margin-bottom: 0.25rem;
+  text-shadow: 0 0 20px rgba(245, 200, 66, 0.5), 0 0 40px rgba(245, 200, 66, 0.25);
 }
 
 .cash-price {
@@ -343,6 +342,13 @@ h2 span {
   background: rgba(245,200,66,0.05);
   border: 1px solid rgba(245,200,66,0.2);
   border-radius: 20px;
+}
+
+.logo-offer {
+  border: 1px solid rgba(245, 200, 66, 0.2);
+  border-radius: 16px;
+  background: rgba(245, 200, 66, 0.05);
+  padding: 2rem;
 }
 
 .logo-offer img {
@@ -419,7 +425,7 @@ h2 span {
   border-radius: 16px;
   margin: 2rem auto;
   max-width: 760px;
-  box-shadow: 0 8px 40px rgba(0,0,0,0.6);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
 }
 
 .video-wrapper iframe {
@@ -529,7 +535,7 @@ h2 span {
   }
 
   .price {
-    font-size: 3.5rem;
+    font-size: 3rem;
   }
 
   .section {
