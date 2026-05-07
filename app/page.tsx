@@ -1,7 +1,7 @@
+'use client'
+
 const checkoutUrl = 'https://pay.kiwify.com.br/7FrQZOt'
 const whatsappUrl = 'https://wa.me/5571999999999'
-const videoComoDividirUrl = 'https://www.youtube.com/embed/F1pYjGMCqAM?start=7'
-const videoViagemCursoUrl = 'https://www.youtube.com/embed/yb-6zZv763k'
 
 const benefits = [
   'Afinação firme e precisa.',
@@ -22,6 +22,8 @@ const faqs = [
 ]
 
 export default function Home() {
+  const testimonials = [1, 2, 3, 4, 5, 6, 7]
+
   return (
     <main>
       <a className="whatsapp" href={whatsappUrl} target="_blank" aria-label="WhatsApp">☘</a>
@@ -38,22 +40,36 @@ export default function Home() {
           <h1>Aprenda a Dividir Voz no Louvor com Segurança e Naturalidade, mesmo sem saber teoria musical</h1>
           <p className="lead">Um treinamento prático para desenvolver percepção, afinação e independência vocal — e finalmente cantar segunda voz com mais confiança no ministério de louvor.</p>
 
-          <div className="video-wrapper">
-            <iframe
-              src={videoComoDividirUrl}
-              title="Como dividir voz"
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            />
+          <div className="video-facade" id="video1" onClick={() => {
+            const el = document.getElementById('video1') as HTMLElement
+            if (el) {
+              el.innerHTML = '<iframe src="https://www.youtube.com/embed/F1pYjGMCqAM?start=7&autoplay=1" title="Como dividir voz" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen style="position:absolute;inset:0;width:100%;height:100%;border:0"></iframe>'
+              el.style.cursor = 'default'
+            }
+          }}>
+            <img src="https://img.youtube.com/vi/F1pYjGMCqAM/maxresdefault.jpg" alt="Como dividir voz" />
+            <div className="video-play-btn">
+              <svg viewBox="0 0 68 48" fill="none"><rect width="68" height="48" rx="10" fill="#FF0000" /><polygon points="28,16 28,32 46,24" fill="white" /></svg>
+            </div>
           </div>
 
           <a className="button primary wide" href={checkoutUrl} target="_blank">EU QUERO AGORA</a>
 
-          <div className="trust-row">
-            <div>▣ <strong>Acesso Imediato</strong></div>
-            <div>☆ <strong>7 Dias de Garantia</strong></div>
-            <div>▣ <strong>Pagamento Seguro</strong></div>
+          <div className="trust-badges">
+            <div className="trust-badge">
+              <svg className="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="2" y="3" width="20" height="14" rx="2" /><path d="M8 21h8M12 17v4" /></svg>
+              <span>Acesso Imediato</span>
+            </div>
+            <div className="trust-divider" />
+            <div className="trust-badge">
+              <svg className="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+              <span>7 Dias de Garantia</span>
+            </div>
+            <div className="trust-divider" />
+            <div className="trust-badge">
+              <svg className="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
+              <span>Pagamento Seguro</span>
+            </div>
           </div>
         </div>
       </section>
@@ -102,14 +118,22 @@ export default function Home() {
       <section className="section testimonials">
         <div className="container">
           <h2>Veja os <span>Resultados que alguns dos nossos alunos</span> já alcançaram</h2>
-          <div className="testimonial-grid">
-            <img src="/images/depoimentos/depoimento-1.webp" alt="Depoimento 1" />
-            <img src="/images/depoimentos/depoimento-2.webp" alt="Depoimento 2" />
-            <img src="/images/depoimentos/depoimento-3.webp" alt="Depoimento 3" />
-            <img src="/images/depoimentos/depoimento-4.webp" alt="Depoimento 4" />
-            <img src="/images/depoimentos/depoimento-5.webp" alt="Depoimento 5" />
-            <img src="/images/depoimentos/depoimento-6.webp" alt="Depoimento 6" />
-            <img src="/images/depoimentos/depoimento-7.webp" alt="Depoimento 7" />
+          <div className="carousel-wrapper">
+            <button className="carousel-btn prev" aria-label="Anterior" onClick={() => {
+              const el = document.getElementById('testimonial-track') as HTMLElement
+              if (el) el.scrollBy({ left: -el.offsetWidth / 3, behavior: 'smooth' })
+            }}>&#8249;</button>
+            <div className="carousel-track" id="testimonial-track">
+              {testimonials.map((n) => (
+                <div className="carousel-slide" key={n}>
+                  <img src={`/images/depoimentos/depoimento-${n}.webp`} alt={`Depoimento ${n}`} />
+                </div>
+              ))}
+            </div>
+            <button className="carousel-btn next" aria-label="Próximo" onClick={() => {
+              const el = document.getElementById('testimonial-track') as HTMLElement
+              if (el) el.scrollBy({ left: el.offsetWidth / 3, behavior: 'smooth' })
+            }}>&#8250;</button>
           </div>
         </div>
       </section>
@@ -126,14 +150,17 @@ export default function Home() {
 
       <section className="section dark center access-section">
         <div className="container narrow">
-          <div className="video-wrapper">
-            <iframe
-              src={videoViagemCursoUrl}
-              title="Viagem pelo curso"
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            />
+          <div className="video-facade" id="video2" onClick={() => {
+            const el = document.getElementById('video2') as HTMLElement
+            if (el) {
+              el.innerHTML = '<iframe src="https://www.youtube.com/embed/yb-6zZv763k?autoplay=1" title="Viagem pelo curso" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen style="position:absolute;inset:0;width:100%;height:100%;border:0"></iframe>'
+              el.style.cursor = 'default'
+            }
+          }}>
+            <img src="https://img.youtube.com/vi/yb-6zZv763k/maxresdefault.jpg" alt="Viagem pelo curso" />
+            <div className="video-play-btn">
+              <svg viewBox="0 0 68 48" fill="none"><rect width="68" height="48" rx="10" fill="#FF0000" /><polygon points="28,16 28,32 46,24" fill="white" /></svg>
+            </div>
           </div>
           <h2>Aprenda a <span>qualquer hora e em qualquer lugar!</span></h2>
           <h3>ACESSO VITALÍCIO</h3>
