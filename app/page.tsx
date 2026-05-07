@@ -5,20 +5,20 @@ const videoViagemCursoUrl = 'https://youtu.be/yb-6zZv763k'
 
 const benefits = [
   'Afinação firme e precisa.',
-  'Percepção e independência auditiva apurada.',
-  'Consciência teórica da harmonização.',
-  'Confiança para abrir voz.',
-  'Habilidade para estudar kits vocais e adaptar qualquer música ao seu tom.',
-  'Capacidade de abrir voz intuitivamente.'
+  'Percepção auditiva mais apurada.',
+  'Mais consciência na hora de harmonizar.',
+  'Confiança para abrir segunda voz.',
+  'Segurança para estudar kits vocais e adaptar músicas ao seu tom.',
+  'Capacidade de encontrar vozes de forma mais intuitiva.'
 ]
 
 const faqs = [
-  ['Esse curso serve para quem está começando do zero?', 'Sim. O método foi pensado para quem quer aprender divisão vocal de forma prática, mesmo sem dominar teoria musical.'],
-  ['Quanto tempo tenho para completar o curso?', 'O acesso é vitalício. Você pode estudar no seu ritmo e revisar as aulas sempre que precisar.'],
-  ['Em quanto tempo verei resultados?', 'Os primeiros resultados podem aparecer já nas primeiras semanas, desde que você pratique os exercícios propostos.'],
-  ['Preciso de algum equipamento específico?', 'Não. Você precisa apenas de internet, celular ou computador e disposição para praticar.'],
-  ['Posso parcelar o valor do treinamento?', 'Sim. O pagamento pode ser parcelado conforme as opções disponíveis no checkout.'],
-  ['Como funciona a garantia?', 'Você tem 7 dias de garantia incondicional. Se não for para você, devolvemos seu dinheiro.'],
+  ['Esse curso serve para quem está começando do zero?', 'Sim. As aulas foram organizadas para quem quer aprender divisão vocal de forma prática, mesmo sem domínio de teoria musical.'],
+  ['Quanto tempo tenho para completar o curso?', 'O acesso é vitalício. Você pode estudar no seu ritmo, repetir as aulas e revisar os exercícios sempre que precisar.'],
+  ['Em quanto tempo verei resultados?', 'Isso depende da sua prática, mas muitos alunos percebem evolução nas primeiras semanas ao seguir o passo a passo.'],
+  ['Preciso de algum equipamento específico?', 'Não. Você só precisa de internet, celular ou computador e constância para praticar os exercícios.'],
+  ['Posso parcelar o valor do treinamento?', 'Sim. O checkout mostra as opções de parcelamento disponíveis no momento da compra.'],
+  ['Como funciona a garantia?', 'Você tem 7 dias de garantia incondicional. Se entender que o treinamento não é para você, pode solicitar o reembolso dentro desse prazo.'],
 ]
 
 export default function Home() {
@@ -36,7 +36,7 @@ export default function Home() {
           <img className="offer-banner" src="/images/hero/mega-oferta.webp" alt="Mega semana de ofertas" />
 
           <h1>Aprenda a Dividir Voz no Louvor com Segurança e Naturalidade, mesmo sem saber teoria musical</h1>
-          <p className="lead">Método testado e comprovado por centenas de alunos. O Foco em Harmonia ensina você a dominar a arte de cantar em segunda voz com um passo a passo simples e direto.</p>
+          <p className="lead">Um treinamento prático para desenvolver percepção, afinação e independência vocal — e finalmente cantar segunda voz com mais confiança no ministério de louvor.</p>
 
           <a className="video-card" href={videoComoDividirUrl} target="_blank" aria-label="Assistir vídeo: Como dividir voz">
             <img src="/images/videos/thumb-como-dividir-voz.webp" alt="Como dividir voz" />
@@ -58,10 +58,10 @@ export default function Home() {
           <div>
             <h2>O Foco em Harmonia é o <span>treinamento ideal</span> para:</h2>
             <ul className="check-list">
-              <li><strong>Ministros de louvor:</strong> ideal para quem precisa dar suporte dividindo voz sem atrapalhar a melodia.</li>
-              <li><strong>Com pouco tempo de estudo:</strong> método direto para aprender dentro do seu horário e disponibilidade.</li>
-              <li><strong>Buscam praticidade:</strong> aulas focadas em percepção, afinação e aplicação real no louvor.</li>
-              <li><strong>Valorizam cursos objetivos:</strong> aprenda com etapas claras, exercícios práticos e resultados perceptíveis.</li>
+              <li><strong>Ministros de louvor:</strong> para quem quer apoiar o grupo dividindo voz com firmeza, sem perder a melodia principal.</li>
+              <li><strong>Quem tem pouco tempo:</strong> aulas objetivas, pensadas para caber na rotina e gerar prática real.</li>
+              <li><strong>Quem busca praticidade:</strong> nada de complicar com teoria pesada; o foco é ouvir, entender e aplicar.</li>
+              <li><strong>Quem quer resultado:</strong> um caminho claro para desenvolver afinação, percepção e segurança vocal.</li>
             </ul>
           </div>
           <img className="product-img" src="/images/produto/notebook-curso.webp" alt="Plataforma do curso" />
@@ -73,11 +73,11 @@ export default function Home() {
           <img className="feature-img" src="/images/produto/ cantor-transformacao.webp" alt="Cantor em transformação vocal" />
           <div>
             <h2>Sua voz pode ser a chave para <span>transformar sua vida!</span></h2>
-            <p>O curso Foco em Harmonia foi projetado para desbloquear a habilidade de dividir vozes em três passos simples, mesmo que você não tenha conhecimento teórico sobre campo harmônico.</p>
-            <p><strong>Passo 1:</strong> Firmar a Afinação</p>
-            <p><strong>Passo 2:</strong> Aprender a Segunda</p>
-            <p><strong>Passo 3:</strong> Desenvolver a Intuição</p>
-            <div className="outline-card">Os exercícios são altamente práticos, permitindo que você aplique os conceitos em situações reais de canto e ajuste os exercícios ao seu tom e classificação vocal.</div>
+            <p>O Foco em Harmonia foi criado para desbloquear sua habilidade de dividir vozes com um caminho simples, progressivo e fácil de aplicar.</p>
+            <p><strong>Passo 1:</strong> firmar sua afinação.</p>
+            <p><strong>Passo 2:</strong> aprender a construir a segunda voz.</p>
+            <p><strong>Passo 3:</strong> desenvolver sua intuição vocal.</p>
+            <div className="outline-card">Os exercícios são práticos e pensados para situações reais de canto, ajudando você a reconhecer caminhos harmônicos e aplicar as vozes com mais segurança.</div>
             <a className="button primary wide" href={checkoutUrl} target="_blank">QUERO APRENDER A DIVIDIR</a>
           </div>
         </div>
@@ -87,9 +87,9 @@ export default function Home() {
         <div className="container">
           <h2 className="black-title">No curso Foco em Harmonia, você vai dividir voz e desenvolver a sua percepção</h2>
           <div className="steps-grid">
-            <article className="step-card"><img src="/images/passos/ passo-1-afinacao.webp" alt="Passo 1" /><span>PASSO 01</span><h3>Firmar a afinação</h3><p>Desenvolva a habilidade de manter a voz principal, mesmo ao ouvir uma segunda voz ou qualquer interferência externa.</p></article>
-            <article className="step-card"><img src="/images/passos/ passo-2-segunda-voz.webp" alt="Passo 2" /><span>PASSO 02</span><h3>Aprender a segunda voz</h3><p>Aprenda a manter essa voz adicional com precisão, sem se desviar da melodia principal.</p></article>
-            <article className="step-card"><img src="/images/passos/passo-3-intuicao.webp" alt="Passo 3" /><span>PASSO 03</span><h3>Desenvolver a intuição</h3><p>Com a prática, você será capaz de criar harmonias naturalmente em qualquer situação.</p></article>
+            <article className="step-card"><img src="/images/passos/ passo-1-afinacao.webp" alt="Passo 1" /><span>PASSO 01</span><h3>Firmar a afinação</h3><p>O primeiro passo é desenvolver estabilidade vocal para manter sua voz firme, mesmo ouvindo outra linha melódica ao mesmo tempo.</p></article>
+            <article className="step-card"><img src="/images/passos/ passo-2-segunda-voz.webp" alt="Passo 2" /><span>PASSO 02</span><h3>Aprender a segunda voz</h3><p>Depois de firmar a base, você aprende a construir a voz complementar com precisão e encaixe musical.</p></article>
+            <article className="step-card"><img src="/images/passos/passo-3-intuicao.webp" alt="Passo 3" /><span>PASSO 03</span><h3>Desenvolver a intuição</h3><p>Com prática guiada, você passa a perceber caminhos naturais para harmonizar sem depender de alguém cantando no seu ouvido.</p></article>
           </div>
         </div>
       </section>
@@ -107,15 +107,15 @@ export default function Home() {
 
       <section className="section recap">
         <div className="container">
-          <h2><span>Recapitulando...</span> Você sairá desse curso, sabendo:</h2>
+          <h2><span>Recapitulando...</span> você sairá desse curso sabendo:</h2>
           <div className="benefit-grid">
             {benefits.map((item) => <div className="benefit" key={item}>✅ <p>{item}</p></div>)}
           </div>
-          <a className="button primary centered" href={checkoutUrl} target="_blank">QUERO APRENDER A CANTAR</a>
+          <a className="button primary centered" href={checkoutUrl} target="_blank">QUERO APRENDER A DIVIDIR</a>
         </div>
       </section>
 
-      <section className="section dark center">
+      <section className="section dark center access-section">
         <div className="container narrow">
           <a className="video-card small-video" href={videoViagemCursoUrl} target="_blank" aria-label="Assistir vídeo: Viagem pelo curso">
             <img src="/images/videos/ thumb-viagem-pelo-curso.webp" alt="Viagem pelo curso" />
@@ -132,12 +132,12 @@ export default function Home() {
           <div>
             <p className="old-price">De: <s>R$397,00</s> Por:</p>
             <h2 className="price">12 x 10,13</h2>
-            <p>ou R$ 97,00 à vista</p>
+            <p className="cash-price">ou R$ 97,00 à vista</p>
             <ul className="offer-list">
-              <li>✓ 7 Módulos de aulas</li>
+              <li>✓ 7 módulos de aulas</li>
               <li>✓ Comunidade exclusiva para alunos</li>
-              <li>✓ Módulo bônus: Como achar seu tom</li>
-              <li>✓ Teste de extensão e classificação</li>
+              <li>✓ Módulo bônus: como achar seu tom</li>
+              <li>✓ Teste de extensão e classificação vocal</li>
               <li>✓ Atividades práticas para o dia a dia</li>
               <li>✓ Acesso vitalício</li>
             </ul>
@@ -150,13 +150,13 @@ export default function Home() {
       <section className="section guarantee dark">
         <div className="container split">
           <img className="guarantee-img" src="/images/oferta/ garantia-7-dias.webp" alt="Garantia de 7 dias" />
-          <div><h2>7 dias de garantia incondicional — <span>ou seu dinheiro de volta!</span></h2><p>Você tem 7 dias para experimentar o treinamento. Se por qualquer motivo achar que o método não é para você, devolvemos 100% do seu dinheiro, sem burocracia.</p></div>
+          <div><h2>7 dias de garantia incondicional — <span>ou seu dinheiro de volta!</span></h2><p>Experimente o treinamento por 7 dias. Se entender que ele não é para você, basta solicitar o reembolso dentro do prazo de garantia.</p></div>
         </div>
       </section>
 
       <section className="section mentor-section">
         <div className="container split">
-          <div><h2>Seu mentor vocal nessa jornada será <span>Marcos Cruz</span></h2><p>Marcos Cruz é músico profissional e professor de canto, técnica vocal e piano com mais de 15 anos de experiência. Ele já ajudou centenas de alunos a destravarem suas vozes e atua como instrutor de técnica vocal em grupos de louvor.</p><a className="button primary" href={checkoutUrl} target="_blank">FAZER PARTE</a></div>
+          <div><h2>Seu mentor vocal nessa jornada será <span>Marcos Cruz</span></h2><p>Marcos Cruz é músico profissional e professor de canto, técnica vocal e piano com mais de 15 anos de experiência. Já ajudou centenas de alunos a destravarem suas vozes e atua com treinamento vocal para grupos de louvor.</p><a className="button primary" href={checkoutUrl} target="_blank">FAZER PARTE</a></div>
           <img className="mentor-img" src="/images/mentor/ marcos-cruz.webp" alt="Marcos Cruz" />
         </div>
       </section>
