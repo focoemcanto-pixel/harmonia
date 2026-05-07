@@ -1,22 +1,15 @@
 'use client'
 
-import { useRef } from 'react'
-
-const ITEMS_PER_VIEW = 3
-
 export default function TestimonialCarousel() {
-  const trackRef = useRef<HTMLDivElement>(null)
-
   const scroll = (dir: number) => {
-    const el = trackRef.current
-    if (el) el.scrollBy({ left: dir * (el.clientWidth / ITEMS_PER_VIEW), behavior: 'smooth' })
+    const el = document.getElementById('carousel-track') as HTMLElement | null
+    if (el) el.scrollBy({ left: dir * (el.clientWidth / 3), behavior: 'smooth' })
   }
-
   return (
     <div className="carousel-wrapper">
       <button className="carousel-btn prev" aria-label="Anterior" onClick={() => scroll(-1)}>&#8249;</button>
-      <div className="carousel-track" ref={trackRef}>
-        {[1, 2, 3, 4, 5, 6, 7].map((n) => (
+      <div className="carousel-track" id="carousel-track">
+        {[1,2,3,4,5,6,7].map(n => (
           <div className="carousel-slide" key={n}>
             <img src={`/images/depoimentos/depoimento-${n}.webp`} alt={`Depoimento ${n}`} />
           </div>
