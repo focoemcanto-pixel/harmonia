@@ -2,7 +2,7 @@ import TestimonialCarousel from './components/TestimonialCarousel'
 import VideoFacade from './components/VideoFacade'
 import CountdownTimer from './components/CountdownTimer'
 
-const checkoutUrl = 'https://pay.kiwify.com.br/7FrQZOt'
+const checkoutUrl = 'https://pay.kiwify.com.br/pYAkfFI'
 const whatsappUrl = 'https://wa.me/5571997178807'
 
 const benefits = [
