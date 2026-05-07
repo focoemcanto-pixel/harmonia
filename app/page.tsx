@@ -38,31 +38,21 @@ export default function Home() {
           <h1>Aprenda a Dividir Voz no Louvor com Segurança e Naturalidade, mesmo sem saber teoria musical</h1>
           <p className="lead">Um treinamento prático para desenvolver percepção, afinação e independência vocal — e finalmente cantar segunda voz com mais confiança no ministério de louvor.</p>
 
-          <VideoFacade videoId="F1pYjGMCqAM" title="Como dividir voz" startSeconds={7} />
+          <VideoFacade
+            videoId="F1pYjGMCqAM"
+            title="Como dividir voz"
+            startSeconds={7}
+            thumbnailSrc="/images/videos/thumb-como-dividir-voz.webp"
+          />
 
           <a className="button primary wide" href={checkoutUrl} target="_blank" rel="noreferrer">EU QUERO AGORA</a>
 
           <div className="trust-badges">
-            <div className="trust-badge">
-              <svg className="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
-              </svg>
-              <span>Acesso Imediato</span>
-            </div>
+            <div className="trust-badge"><span>Acesso Imediato</span></div>
             <div className="trust-divider" />
-            <div className="trust-badge">
-              <svg className="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-              </svg>
-              <span>7 Dias de Garantia</span>
-            </div>
+            <div className="trust-badge"><span>7 Dias de Garantia</span></div>
             <div className="trust-divider" />
-            <div className="trust-badge">
-              <svg className="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-              </svg>
-              <span>Pagamento Seguro</span>
-            </div>
+            <div className="trust-badge"><span>Pagamento Seguro</span></div>
           </div>
         </div>
       </section>
@@ -142,65 +132,17 @@ export default function Home() {
 
       <section className="section dark center access-section">
         <div className="container narrow">
-          <VideoFacade videoId="yb-6zZv763k" title="Viagem pelo curso" />
+          <VideoFacade
+            videoId="yb-6zZv763k"
+            title="Viagem pelo curso"
+            thumbnailSrc="/images/videos/thumb-viagem-pelo-curso.webp"
+          />
           <h2>Aprenda a <span>qualquer hora e em qualquer lugar!</span></h2>
           <h3>ACESSO VITALÍCIO</h3>
           <div className="trust-row compact">
             <div>✅ 7 Módulos Gravados</div>
             <div>✅ Treinamento 100% online</div>
             <div>✅ Aulas direto ao ponto</div>
-          </div>
-        </div>
-      </section>
-
-      <section className="section offer-section">
-        <div className="container offer-grid">
-          <div>
-            <p className="old-price">De: <s>R$397,00</s> Por:</p>
-            <h2 className="price">12 x 10,13</h2>
-            <p className="cash-price">ou R$ 97,00 à vista</p>
-            <ul className="offer-list">
-              <li>✓ 7 módulos de aulas</li>
-              <li>✓ Comunidade exclusiva para alunos</li>
-              <li>✓ Módulo bônus: como achar seu tom</li>
-              <li>✓ Teste de extensão e classificação vocal</li>
-              <li>✓ Atividades práticas para o dia a dia</li>
-              <li>✓ Acesso vitalício</li>
-            </ul>
-            <a className="button primary wide" href={checkoutUrl} target="_blank" rel="noreferrer">QUERO APRENDER AGORA</a>
-          </div>
-          <div className="logo-offer">
-            <img src="/images/oferta/logo-foco-em-harmonia.webp" alt="Foco em Harmonia" />
-            <p>Comece a desenvolver sua habilidade para dividir voz e viva essa transformação.</p>
-          </div>
-        </div>
-      </section>
-
-      <section className="section guarantee dark">
-        <div className="container split">
-          <img className="guarantee-img" src="/images/oferta/garantia-7-dias.webp" alt="Garantia de 7 dias" />
-          <div>
-            <h2>7 dias de garantia incondicional — <span>ou seu dinheiro de volta!</span></h2>
-            <p>Experimente o treinamento por 7 dias. Se entender que ele não é para você, basta solicitar o reembolso dentro desse prazo — sem perguntas, sem burocracia.</p>
-          </div>
-        </div>
-      </section>
-
-      <section className="section mentor-section">
-        <div className="container split">
-          <div>
-            <h2>Seu mentor vocal nessa jornada será <span>Marcos Cruz</span></h2>
-            <p>Marcos Cruz é músico profissional e professor de canto, técnica vocal e piano com mais de 15 anos de experiência. Já ajudou centenas de alunos a desenvolver sua voz e cantar com mais confiança no ministério.</p>
-          </div>
-          <img className="mentor-img" src="/images/mentor/marcos-cruz.webp" alt="Marcos Cruz" />
-        </div>
-      </section>
-
-      <section className="section faq dark">
-        <div className="container">
-          <h2>Perguntas Frequentes</h2>
-          <div className="faq-list">
-            {faqs.map(([q, a]) => <details key={q}><summary>{q}</summary><p>{a}</p></details>)}
           </div>
         </div>
       </section>
