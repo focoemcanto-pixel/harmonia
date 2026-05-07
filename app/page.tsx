@@ -146,6 +146,58 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <section className="section offer-section">
+        <div className="container offer-grid">
+          <div>
+            <p className="old-price">De: <s>R$397,00</s> Por:</p>
+            <h2 className="price">12 x 10,13</h2>
+            <p className="cash-price">ou R$ 97,00 à vista</p>
+            <ul className="offer-list">
+              <li>✓ 7 módulos de aulas</li>
+              <li>✓ Comunidade exclusiva para alunos</li>
+              <li>✓ Módulo bônus: como achar seu tom</li>
+              <li>✓ Teste de extensão e classificação vocal</li>
+              <li>✓ Atividades práticas para o dia a dia</li>
+              <li>✓ Acesso vitalício</li>
+            </ul>
+            <a className="button primary wide" href={checkoutUrl} target="_blank" rel="noreferrer">QUERO APRENDER AGORA</a>
+          </div>
+          <div className="logo-offer">
+            <img src="/images/oferta/logo-foco-em-harmonia.webp" alt="Foco em Harmonia" />
+            <p>Comece a desenvolver sua habilidade para dividir voz e viva essa transformação.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="section guarantee dark">
+        <div className="container split">
+          <img className="guarantee-img" src="/images/oferta/garantia-7-dias.webp" alt="Garantia de 7 dias" />
+          <div>
+            <h2>7 dias de garantia incondicional — <span>ou seu dinheiro de volta!</span></h2>
+            <p>Experimente o treinamento por 7 dias. Se entender que ele não é para você, basta solicitar o reembolso dentro desse prazo — sem perguntas, sem burocracia.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="section mentor-section">
+        <div className="container split">
+          <div>
+            <h2>Seu mentor vocal nessa jornada será <span>Marcos Cruz</span></h2>
+            <p>Marcos Cruz é músico profissional e professor de canto, técnica vocal e piano com mais de 15 anos de experiência. Já ajudou centenas de alunos a desenvolver sua voz e cantar com mais confiança no ministério.</p>
+          </div>
+          <img className="mentor-img" src="/images/mentor/marcos-cruz.webp" alt="Marcos Cruz" />
+        </div>
+      </section>
+
+      <section className="section faq dark">
+        <div className="container">
+          <h2>Perguntas Frequentes</h2>
+          <div className="faq-list">
+            {faqs.map(([q, a]) => <details key={q}><summary>{q}</summary><p>{a}</p></details>)}
+          </div>
+        </div>
+      </section>
     </main>
   )
 }
