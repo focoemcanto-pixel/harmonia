@@ -106,6 +106,10 @@ export default function Home() {
             <img src="/images/depoimentos/depoimento-1.webp" alt="Depoimento 1" />
             <img src="/images/depoimentos/depoimento-2.webp" alt="Depoimento 2" />
             <img src="/images/depoimentos/depoimento-3.webp" alt="Depoimento 3" />
+            <img src="/images/depoimentos/depoimento-4.webp" alt="Depoimento 4" />
+            <img src="/images/depoimentos/depoimento-5.webp" alt="Depoimento 5" />
+            <img src="/images/depoimentos/depoimento-6.webp" alt="Depoimento 6" />
+            <img src="/images/depoimentos/depoimento-7.webp" alt="Depoimento 7" />
           </div>
         </div>
       </section>
