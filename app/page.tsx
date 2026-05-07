@@ -1,5 +1,7 @@
 'use client'
 
+import { useRef, useState } from 'react'
+
 const checkoutUrl = 'https://pay.kiwify.com.br/7FrQZOt'
 const whatsappUrl = 'https://wa.me/5571999999999'
 
@@ -22,7 +24,29 @@ const faqs = [
 ]
 
 export default function Home() {
-  const testimonials = [1, 2, 3, 4, 5, 6, 7]
+  const testimonialImages = [
+    '/images/depoimentos/depoimento-1.webp',
+    '/images/depoimentos/depoimento-2.webp',
+    '/images/depoimentos/depoimento-3.webp',
+    '/images/depoimentos/depoimento-4.webp',
+    '/images/depoimentos/depoimento-5.webp',
+    '/images/depoimentos/depoimento-6.webp',
+    '/images/depoimentos/depoimento-7.webp',
+  ]
+  const [isVideo1Open, setIsVideo1Open] = useState(false)
+  const [isVideo2Open, setIsVideo2Open] = useState(false)
+  const testimonialTrackRef = useRef<HTMLDivElement>(null)
+
+  const scrollTestimonials = (direction: 'prev' | 'next') => {
+    const track = testimonialTrackRef.current
+    if (!track) return
+
+    const slide = track.querySelector('.carousel-slide') as HTMLElement | null
+    const gap = Number.parseFloat(getComputedStyle(track).gap || '0')
+    const slideWidth = slide ? slide.getBoundingClientRect().width + gap : track.offsetWidth / 3
+    const distance = direction === 'prev' ? -slideWidth : slideWidth
+    track.scrollBy({ left: distance, behavior: 'smooth' })
+  }
 
   return (
     <main>
@@ -40,17 +64,22 @@ export default function Home() {
           <h1>Aprenda a Dividir Voz no Louvor com Segurança e Naturalidade, mesmo sem saber teoria musical</h1>
           <p className="lead">Um treinamento prático para desenvolver percepção, afinação e independência vocal — e finalmente cantar segunda voz com mais confiança no ministério de louvor.</p>
 
-          <div className="video-facade" id="video1" onClick={() => {
-            const el = document.getElementById('video1') as HTMLElement
-            if (el) {
-              el.innerHTML = '<iframe src="https://www.youtube.com/embed/F1pYjGMCqAM?start=7&autoplay=1" title="Como dividir voz" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen style="position:absolute;inset:0;width:100%;height:100%;border:0"></iframe>'
-              el.style.cursor = 'default'
-            }
-          }}>
-            <img src="https://img.youtube.com/vi/F1pYjGMCqAM/maxresdefault.jpg" alt="Como dividir voz" />
-            <div className="video-play-btn">
-              <svg viewBox="0 0 68 48" fill="none"><rect width="68" height="48" rx="10" fill="#FF0000" /><polygon points="28,16 28,32 46,24" fill="white" /></svg>
-            </div>
+          <div className="video-facade" id="video1" onClick={() => setIsVideo1Open(true)}>
+            {isVideo1Open ? (
+              <iframe
+                src="https://www.youtube.com/embed/F1pYjGMCqAM?start=7&autoplay=1"
+                title="Como dividir voz"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            ) : (
+              <>
+                <img src="https://img.youtube.com/vi/F1pYjGMCqAM/maxresdefault.jpg" alt="Como dividir voz" />
+                <div className="video-play-btn">
+                  <svg viewBox="0 0 68 48" fill="none"><rect width="68" height="48" rx="10" fill="#FF0000" /><polygon points="28,16 28,32 46,24" fill="white" /></svg>
+                </div>
+              </>
+            )}
           </div>
 
           <a className="button primary wide" href={checkoutUrl} target="_blank">EU QUERO AGORA</a>
@@ -120,19 +149,17 @@ export default function Home() {
           <h2>Veja os <span>Resultados que alguns dos nossos alunos</span> já alcançaram</h2>
           <div className="carousel-wrapper">
             <button className="carousel-btn prev" aria-label="Anterior" onClick={() => {
-              const el = document.getElementById('testimonial-track') as HTMLElement
-              if (el) el.scrollBy({ left: -el.offsetWidth / 3, behavior: 'smooth' })
+              scrollTestimonials('prev')
             }}>&#8249;</button>
-            <div className="carousel-track" id="testimonial-track">
-              {testimonials.map((n) => (
-                <div className="carousel-slide" key={n}>
-                  <img src={`/images/depoimentos/depoimento-${n}.webp`} alt={`Depoimento ${n}`} />
+            <div className="carousel-track" id="testimonial-track" ref={testimonialTrackRef}>
+              {testimonialImages.map((src, index) => (
+                <div className="carousel-slide" key={src}>
+                  <img src={src} alt={`Depoimento ${index + 1}`} />
                 </div>
               ))}
             </div>
             <button className="carousel-btn next" aria-label="Próximo" onClick={() => {
-              const el = document.getElementById('testimonial-track') as HTMLElement
-              if (el) el.scrollBy({ left: el.offsetWidth / 3, behavior: 'smooth' })
+              scrollTestimonials('next')
             }}>&#8250;</button>
           </div>
         </div>
@@ -150,17 +177,22 @@ export default function Home() {
 
       <section className="section dark center access-section">
         <div className="container narrow">
-          <div className="video-facade" id="video2" onClick={() => {
-            const el = document.getElementById('video2') as HTMLElement
-            if (el) {
-              el.innerHTML = '<iframe src="https://www.youtube.com/embed/yb-6zZv763k?autoplay=1" title="Viagem pelo curso" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen style="position:absolute;inset:0;width:100%;height:100%;border:0"></iframe>'
-              el.style.cursor = 'default'
-            }
-          }}>
-            <img src="https://img.youtube.com/vi/yb-6zZv763k/maxresdefault.jpg" alt="Viagem pelo curso" />
-            <div className="video-play-btn">
-              <svg viewBox="0 0 68 48" fill="none"><rect width="68" height="48" rx="10" fill="#FF0000" /><polygon points="28,16 28,32 46,24" fill="white" /></svg>
-            </div>
+          <div className="video-facade" id="video2" onClick={() => setIsVideo2Open(true)}>
+            {isVideo2Open ? (
+              <iframe
+                src="https://www.youtube.com/embed/yb-6zZv763k?autoplay=1"
+                title="Viagem pelo curso"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            ) : (
+              <>
+                <img src="https://img.youtube.com/vi/yb-6zZv763k/maxresdefault.jpg" alt="Viagem pelo curso" />
+                <div className="video-play-btn">
+                  <svg viewBox="0 0 68 48" fill="none"><rect width="68" height="48" rx="10" fill="#FF0000" /><polygon points="28,16 28,32 46,24" fill="white" /></svg>
+                </div>
+              </>
+            )}
           </div>
           <h2>Aprenda a <span>qualquer hora e em qualquer lugar!</span></h2>
           <h3>ACESSO VITALÍCIO</h3>

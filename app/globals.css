@@ -655,7 +655,7 @@ h2 span {
   }
 
   .carousel-slide {
-    flex: 0 0 calc(100% - 0rem);
+    flex: 0 0 100%;
   }
 
   .carousel-btn.prev {
