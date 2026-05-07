@@ -56,7 +56,7 @@ export default function Home() {
 
   return (
     <main>
-      <a className="whatsapp" href={whatsappUrl} target="_blank" aria-label="WhatsApp">☘</a>
+      <a className="whatsapp" href={whatsappUrl} target="_blank" rel="noreferrer" aria-label="WhatsApp">☘</a>
 
       <section className="countdown">
         <div className="count-box"><strong>00</strong><span>Minutos</span></div>
@@ -71,7 +71,7 @@ export default function Home() {
 
           <VideoFacade videoId="F1pYjGMCqAM" title="Como dividir voz" startSeconds={7} />
 
-          <a className="button primary wide" href={checkoutUrl} target="_blank">EU QUERO AGORA</a>
+          <a className="button primary wide" href={checkoutUrl} target="_blank" rel="noreferrer">EU QUERO AGORA</a>
 
           <div className="trust-badges">
             <div className="trust-badge">
@@ -123,7 +123,7 @@ export default function Home() {
             <p><strong>Passo 2:</strong> aprender a construir a segunda voz.</p>
             <p><strong>Passo 3:</strong> desenvolver sua intuição vocal.</p>
             <div className="outline-card">Os exercícios são práticos e pensados para situações reais de canto, ajudando você a reconhecer caminhos harmônicos e aplicar as vozes com mais segurança.</div>
-            <a className="button primary wide" href={checkoutUrl} target="_blank">QUERO APRENDER A DIVIDIR</a>
+            <a className="button primary wide" href={checkoutUrl} target="_blank" rel="noreferrer">QUERO APRENDER A DIVIDIR</a>
           </div>
         </div>
       </section>
@@ -167,7 +167,7 @@ export default function Home() {
           <div className="benefit-grid">
             {benefits.map((item) => <div className="benefit" key={item}>✅ <p>{item}</p></div>)}
           </div>
-          <a className="button primary centered" href={checkoutUrl} target="_blank">QUERO APRENDER A DIVIDIR</a>
+          <a className="button primary centered" href={checkoutUrl} target="_blank" rel="noreferrer">QUERO APRENDER A DIVIDIR</a>
         </div>
       </section>
 
@@ -198,7 +198,7 @@ export default function Home() {
               <li>✓ Atividades práticas para o dia a dia</li>
               <li>✓ Acesso vitalício</li>
             </ul>
-            <a className="button primary wide" href={checkoutUrl} target="_blank">QUERO APRENDER AGORA</a>
+            <a className="button primary wide" href={checkoutUrl} target="_blank" rel="noreferrer">QUERO APRENDER AGORA</a>
           </div>
           <div className="logo-offer">
             <img src="/images/oferta/logo-foco-em-harmonia.webp" alt="Foco em Harmonia" />
