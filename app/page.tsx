@@ -17,7 +17,7 @@ export default function Home() {
           </div>
 
           <div className="hero-image">
-            <img src="/images/hero/mega-semana-ofertas.webp" alt="Foco em Harmonia" />
+            <img src="/images/hero/mega-oferta.webp" alt="Foco em Harmonia" />
           </div>
         </div>
       </section>
@@ -27,7 +27,7 @@ export default function Home() {
           <h2 className="section-title">Sua voz pode transformar sua vida</h2>
 
           <div className="mentor">
-            <img src="/images/produto/cantor-transformacao.webp" alt="Transformação" />
+            <img src="/images/produto/ cantor-transformacao.webp" alt="Transformação" />
 
             <div>
               <p className="subtitle">
@@ -52,13 +52,13 @@ export default function Home() {
 
           <div className="grid-3">
             <div className="card">
-              <img src="/images/passos/passo-1-afinacao.webp" alt="Passo 1" />
+              <img src="/images/passos/ passo-1-afinacao.webp" alt="Passo 1" />
               <h3>Firmar a Afinação</h3>
               <p>Desenvolva segurança vocal e aprenda a manter a afinação com estabilidade.</p>
             </div>
 
             <div className="card">
-              <img src="/images/passos/passo-2-segunda-voz.webp" alt="Passo 2" />
+              <img src="/images/passos/ passo-2-segunda-voz.webp" alt="Passo 2" />
               <h3>Aprender a Segunda</h3>
               <p>Entenda na prática como construir segundas vozes mesmo sem teoria musical.</p>
             </div>
@@ -74,7 +74,7 @@ export default function Home() {
 
       <section className="section section-dark">
         <div className="container mentor">
-          <img src="/images/mentor/marcos-cruz.webp" alt="Marcos Cruz" />
+          <img src="/images/mentor/ marcos-cruz.webp" alt="Marcos Cruz" />
 
           <div>
             <h2 className="section-title" style={{textAlign:'left'}}>Seu mentor será Marcos Cruz</h2>
