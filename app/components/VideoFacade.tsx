@@ -8,89 +8,68 @@ interface Props {
   thumbnailSrc?: string
 }
 
-// Loader global da YT IFrame API — suporta múltiplas instâncias na mesma página
-const ytCallbacks: Array<() => void> = []
-let ytApiState: 'idle' | 'loading' | 'ready' = 'idle'
-
-function loadYTApi(onReady: () => void) {
-  if (typeof window === 'undefined') return
-  if (ytApiState === 'ready') {
-    // Aguarda o próximo frame para garantir que a div já está no DOM
-    requestAnimationFrame(() => onReady())
-    return
-  }
-  ytCallbacks.push(onReady)
-  if (ytApiState === 'loading') return
-  ytApiState = 'loading'
-  const script = document.createElement('script')
-  script.src = 'https://www.youtube.com/iframe_api'
-  document.head.appendChild(script)
-  ;(window as any).onYouTubeIframeAPIReady = () => {
-    ytApiState = 'ready'
-    ytCallbacks.forEach(cb => cb())
-    ytCallbacks.length = 0
-  }
-}
-
 export default function VideoFacade({ videoId, title, startSeconds, thumbnailSrc }: Props) {
   const [playing, setPlaying] = useState(false)
   const [progress, setProgress] = useState(0)
-  const playerRef = useRef<any>(null)
-  const containerRef = useRef<HTMLDivElement>(null)
-  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null)
+  const iframeRef = useRef<HTMLIFrameElement>(null)
+  const durationRef = useRef<number>(0)
   const thumbSrc = thumbnailSrc ?? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`
 
+  // Monta a URL do embed diretamente — iframe criado no clique = iOS respeita o gesto do usuário
+  const params = new URLSearchParams({
+    autoplay: '1',
+    playsinline: '1',   // obrigatório para iOS não abrir em tela cheia forçado
+    controls: '0',      // sem controles nativos do YouTube
+    modestbranding: '1',
+    rel: '0',
+    iv_load_policy: '3',
+    fs: '1',            // mantém botão de tela cheia
+    enablejsapi: '1',   // permite comunicação via postMessage para barra de progresso
+    ...(startSeconds ? { start: String(startSeconds) } : {}),
+  })
+  const embedSrc = `https://www.youtube.com/embed/${videoId}?${params}`
+
+  // Recebe atualizações de tempo do iframe do YouTube via postMessage
   useEffect(() => {
     if (!playing) return
 
-    loadYTApi(() => {
-      if (!containerRef.current) return
-      playerRef.current = new (window as any).YT.Player(containerRef.current, {
-        videoId,
-        playerVars: {
-          autoplay: 1,
-          controls: 0,   // sem controles nativos do YouTube
-          modestbranding: 1,
-          rel: 0,
-          iv_load_policy: 3,
-          disablekb: 1,
-          playsinline: 1,
-          fs: 1,          // mantém botão de fullscreen
-          start: startSeconds ?? 0,
-        },
-        events: {
-          onReady(e: any) {
-            e.target.playVideo()
-            intervalRef.current = setInterval(() => {
-              const cur: number = e.target.getCurrentTime?.() ?? 0
-              const dur: number = e.target.getDuration?.() ?? 0
-              if (dur > 0) setProgress((cur / dur) * 100)
-            }, 500)
-          },
-        },
-      })
-    })
-
-    return () => {
-      if (intervalRef.current) clearInterval(intervalRef.current)
-      playerRef.current?.destroy?.()
-      playerRef.current = null
+    function onMessage(e: MessageEvent) {
+      if (e.origin !== 'https://www.youtube.com') return
+      try {
+        const data = typeof e.data === 'string' ? JSON.parse(e.data) : e.data
+        const info = data?.info
+        if (info?.duration) durationRef.current = info.duration
+        if (info?.currentTime != null && durationRef.current > 0) {
+          setProgress((info.currentTime / durationRef.current) * 100)
+        }
+      } catch {}
     }
+
+    window.addEventListener('message', onMessage)
+    return () => window.removeEventListener('message', onMessage)
   }, [playing])
 
   function handleSeek(e: React.MouseEvent<HTMLDivElement>) {
-    if (!playerRef.current) return
+    if (!iframeRef.current || !durationRef.current) return
     const rect = e.currentTarget.getBoundingClientRect()
     const ratio = (e.clientX - rect.left) / rect.width
-    const dur: number = playerRef.current.getDuration?.() ?? 0
-    playerRef.current.seekTo(ratio * dur, true)
+    iframeRef.current.contentWindow?.postMessage(
+      JSON.stringify({ event: 'command', func: 'seekTo', args: [ratio * durationRef.current, true] }),
+      'https://www.youtube.com'
+    )
   }
 
   return (
     <div className="video-facade">
       {playing ? (
         <>
-          <div ref={containerRef} className="video-player-div" />
+          <iframe
+            ref={iframeRef}
+            src={embedSrc}
+            title={title}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+            allowFullScreen
+          />
           <div className="video-progress-bar" onClick={handleSeek}>
             <div className="video-progress-fill" style={{ width: `${progress}%` }} />
           </div>
