@@ -27,9 +27,19 @@ p{line-height:1.7;margin-bottom:1rem;color:rgba(255,255,255,.85)}
 .button.centered{display:block;max-width:400px;margin:2rem auto 0}
 
 /* Countdown */
-.countdown{display:flex;justify-content:center;gap:1rem;padding:.75rem;background:#1a0000;border-bottom:2px solid #f5c842}
-.count-box{display:flex;flex-direction:column;align-items:center;font-size:.75rem}
-.count-box strong{font-size:1.4rem;color:#f5c842}
+.countdown{display:flex;justify-content:center;align-items:center;gap:1.5rem;padding:.85rem 1rem;background:#1a0000;border-bottom:2px solid #f5c842;position:sticky;top:0;z-index:100}
+.countdown-label{color:rgba(255,255,255,.85);font-size:.8rem;text-transform:uppercase;letter-spacing:.05em;text-align:center;line-height:1.3}
+.countdown-label strong{display:block;color:#f5c842;font-size:.75rem}
+.count-box{display:flex;flex-direction:column;align-items:center;min-width:52px}
+.count-box strong{font-size:2rem;color:#f5c842;font-weight:800;line-height:1;font-variant-numeric:tabular-nums}
+.count-box strong.pulse{animation:pulse 1s infinite}
+.count-box span{font-size:.65rem;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.6);margin-top:2px}
+.count-separator{font-size:1.8rem;font-weight:800;color:#f5c842;line-height:1;padding-bottom:8px}
+
+@keyframes pulse{
+  0%,100%{opacity:1;transform:scale(1)}
+  50%{opacity:.75;transform:scale(1.08)}
+}
 
 /* Hero */
 .hero-original{padding:4rem 1.5rem 3rem;background:radial-gradient(ellipse at top,#1a1a2e,#050505)}
@@ -125,24 +135,40 @@ p{line-height:1.7;margin-bottom:1rem;color:rgba(255,255,255,.85)}
 .faq-list p{padding:.25rem 1.25rem 1rem;color:rgba(255,255,255,.75);font-size:.95rem;margin:0}
 
 /* WhatsApp */
-.whatsapp{position:fixed;bottom:1.5rem;right:1.5rem;background:#25d366;color:#fff;width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.6rem;box-shadow:0 4px 16px rgba(0,0,0,.3);z-index:999;transition:transform .2s}
-.whatsapp:hover{transform:scale(1.1)}
+.whatsapp{position:fixed;bottom:1.5rem;right:1.5rem;background:#25d366;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(37,211,102,.45);z-index:999;transition:transform .2s,box-shadow .2s}
+.whatsapp:hover{transform:scale(1.12);box-shadow:0 6px 24px rgba(37,211,102,.6)}
 
 /* Product image */
 .product-img{border-radius:16px;box-shadow:0 8px 40px rgba(0,0,0,.5)}
 
 /* Mobile */
 @media (max-width:768px){
+  .countdown{flex-wrap:wrap;gap:.75rem;padding:.75rem 1rem}
+  .countdown-label{width:100%;text-align:center;font-size:.75rem}
+  .count-box strong{font-size:1.6rem}
+  .count-separator{font-size:1.4rem}
+  .hero-original{padding:2.5rem 1rem 2rem}
+  .offer-banner{max-width:100%}
   .container.split{grid-template-columns:1fr;gap:2rem}
   .container.split.reverse-mobile img{order:-1}
   .steps-grid{grid-template-columns:1fr}
   .benefit-grid{grid-template-columns:1fr}
   .offer-grid{grid-template-columns:1fr}
+  .logo-offer{display:none}
   .carousel-slide{flex:0 0 85%}
   .carousel-btn.prev{left:4px}
   .carousel-btn.next{right:4px}
   .trust-badges{flex-direction:column;gap:1rem;padding:1.25rem}
   .trust-divider{width:80%;height:1px;margin:0 auto}
-  .mentor-img{width:220px;height:220px}
-  .guarantee-img{max-width:220px}
+  .mentor-img{width:200px;height:200px;margin:0 auto}
+  .guarantee-img{max-width:200px;margin:0 auto}
+  .section{padding:3rem 1rem}
+  .whatsapp{bottom:1rem;right:1rem;width:50px;height:50px}
+  .button.wide{max-width:100%}
+}
+
+@media (max-width:400px){
+  h1{font-size:1.5rem}
+  h2{font-size:1.2rem}
+  .price{font-size:2rem}
 }
