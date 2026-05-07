@@ -24,7 +24,7 @@ export default function VideoFacade({ videoId, title, startSeconds }: Props) {
       className="video-facade"
       onClick={play}
       onKeyDown={(event) => {
-        if (event.key === 'Enter' || event.key === ' ' || event.code === 'Space') {
+        if (event.key === 'Enter' || event.key === ' ') {
           event.preventDefault()
           play()
         }
