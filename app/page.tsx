@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef, useState } from 'react'
+import { KeyboardEvent, useRef, useState } from 'react'
 
 const checkoutUrl = 'https://pay.kiwify.com.br/7FrQZOt'
 const whatsappUrl = 'https://wa.me/5571999999999'
@@ -48,6 +48,13 @@ export default function Home() {
     track.scrollBy({ left: distance, behavior: 'smooth' })
   }
 
+  const openVideoOnKeyDown = (event: KeyboardEvent<HTMLDivElement>, openVideo: () => void) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault()
+      openVideo()
+    }
+  }
+
   return (
     <main>
       <a className="whatsapp" href={whatsappUrl} target="_blank" aria-label="WhatsApp">☘</a>
@@ -64,7 +71,15 @@ export default function Home() {
           <h1>Aprenda a Dividir Voz no Louvor com Segurança e Naturalidade, mesmo sem saber teoria musical</h1>
           <p className="lead">Um treinamento prático para desenvolver percepção, afinação e independência vocal — e finalmente cantar segunda voz com mais confiança no ministério de louvor.</p>
 
-          <div className="video-facade" id="video1" onClick={() => setIsVideo1Open(true)}>
+          <div
+            className="video-facade"
+            id="video1"
+            role="button"
+            tabIndex={0}
+            aria-label="Reproduzir vídeo Como dividir voz"
+            onClick={() => setIsVideo1Open(true)}
+            onKeyDown={(event) => openVideoOnKeyDown(event, () => setIsVideo1Open(true))}
+          >
             {isVideo1Open ? (
               <iframe
                 src="https://www.youtube.com/embed/F1pYjGMCqAM?start=7&autoplay=1"
@@ -74,7 +89,7 @@ export default function Home() {
               />
             ) : (
               <>
-                <img src="https://img.youtube.com/vi/F1pYjGMCqAM/hqdefault.jpg" alt="Como dividir voz" width="1280" height="720" />
+                <img src="https://img.youtube.com/vi/F1pYjGMCqAM/hqdefault.jpg" alt="Como dividir voz" width="480" height="360" />
                 <div className="video-play-btn">
                   <svg viewBox="0 0 68 48" fill="none"><rect width="68" height="48" rx="10" fill="#FF0000" /><polygon points="28,16 28,32 46,24" fill="white" /></svg>
                 </div>
@@ -187,7 +202,15 @@ export default function Home() {
 
       <section className="section dark center access-section">
         <div className="container narrow">
-          <div className="video-facade" id="video2" onClick={() => setIsVideo2Open(true)}>
+          <div
+            className="video-facade"
+            id="video2"
+            role="button"
+            tabIndex={0}
+            aria-label="Reproduzir vídeo Viagem pelo curso"
+            onClick={() => setIsVideo2Open(true)}
+            onKeyDown={(event) => openVideoOnKeyDown(event, () => setIsVideo2Open(true))}
+          >
             {isVideo2Open ? (
               <iframe
                 src="https://www.youtube.com/embed/yb-6zZv763k?autoplay=1"
@@ -197,7 +220,7 @@ export default function Home() {
               />
             ) : (
               <>
-                <img src="https://img.youtube.com/vi/yb-6zZv763k/hqdefault.jpg" alt="Viagem pelo curso" width="1280" height="720" />
+                <img src="https://img.youtube.com/vi/yb-6zZv763k/hqdefault.jpg" alt="Viagem pelo curso" width="480" height="360" />
                 <div className="video-play-btn">
                   <svg viewBox="0 0 68 48" fill="none"><rect width="68" height="48" rx="10" fill="#FF0000" /><polygon points="28,16 28,32 46,24" fill="white" /></svg>
                 </div>
