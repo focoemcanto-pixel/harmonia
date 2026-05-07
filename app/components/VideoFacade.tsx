@@ -14,7 +14,7 @@ function sanitizeVideoId(videoId: string) {
 }
 
 function sanitizeThumbnailSrc(thumbnailSrc?: string) {
-  return thumbnailSrc?.startsWith('/') ? thumbnailSrc : undefined
+  return thumbnailSrc && /^\/images\/videos\/[\w-]+\.webp$/.test(thumbnailSrc) ? thumbnailSrc : undefined
 }
 
 export default function VideoFacade({ videoId, title, startSeconds, thumbnailSrc }: Props) {
