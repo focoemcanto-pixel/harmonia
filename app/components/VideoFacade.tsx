@@ -14,7 +14,7 @@ function sanitizeVideoId(videoId: string) {
 }
 
 function sanitizeThumbnailSrc(thumbnailSrc?: string) {
-  return thumbnailSrc && /^\/images\/videos\/[\w-]+\.webp$/.test(thumbnailSrc) ? thumbnailSrc : undefined
+  return thumbnailSrc && /^\/images\/videos\/[A-Za-z0-9_-]+\.webp$/.test(thumbnailSrc) ? thumbnailSrc : undefined
 }
 
 export default function VideoFacade({ videoId, title, startSeconds, thumbnailSrc }: Props) {
@@ -50,7 +50,7 @@ export default function VideoFacade({ videoId, title, startSeconds, thumbnailSrc
       type="button"
       aria-label={`Reproduzir vídeo: ${title}`}
     >
-      <img src={thumb} alt={title} loading="lazy" decoding="async" />
+      <img src={thumb} alt={`Thumbnail do vídeo ${title}`} loading="lazy" decoding="async" />
       <div className="video-play-btn">
         <svg viewBox="0 0 68 48" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect width="68" height="48" rx="10" fill="#FF0000" />
