@@ -272,6 +272,7 @@ h2 span {
 
 .offer-section {
   background: linear-gradient(135deg, #0d0d1f, #1a1040);
+  padding: 6rem 1.5rem;
 }
 
 .offer-grid {
@@ -289,10 +290,12 @@ h2 span {
 
 .price {
   font-family: 'Playfair Display', serif;
-  font-size: 3rem;
+  font-size: clamp(3.5rem, 8vw, 6rem);
   color: #f5c842;
   font-weight: 800;
   margin-bottom: 0.25rem;
+  text-shadow: 0 0 24px rgba(245, 200, 66, 0.55), 0 2px 8px rgba(0, 0, 0, 0.5);
+  line-height: 1.1;
 }
 
 .cash-price {
@@ -320,6 +323,14 @@ h2 span {
   left: 0;
   color: #f5c842;
   font-weight: bold;
+}
+
+.logo-offer {
+  border: 2px solid #f5c842;
+  background: rgba(245, 200, 66, 0.06);
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
 }
 
 .logo-offer img {
@@ -504,7 +515,7 @@ h2 span {
   }
 
   .price {
-    font-size: 2.2rem;
+    font-size: clamp(3rem, 10vw, 4rem);
   }
 
   .section {
