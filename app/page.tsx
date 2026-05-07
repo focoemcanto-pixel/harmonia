@@ -151,25 +151,27 @@ export default function Home() {
       </section>
 
       <section className="section offer-section">
-        <div className="container offer-grid">
-          <div>
-            <p className="old-price">De: <s>R$397,00</s> Por:</p>
-            <h2 className="price">12 x 10,13</h2>
-            <p className="cash-price">ou R$ 97,00 à vista</p>
-            <ul className="offer-list">
-              <li>✓ 7 módulos de aulas</li>
-              <li>✓ Comunidade exclusiva para alunos</li>
-              <li>✓ Módulo bônus: como achar seu tom</li>
-              <li>✓ Teste de extensão e classificação vocal</li>
-              <li>✓ Atividades práticas para o dia a dia</li>
-              <li>✓ Acesso vitalício</li>
-            </ul>
-            <a className="button primary wide" href={checkoutUrl} target="_blank" rel="noreferrer">QUERO APRENDER AGORA</a>
-          </div>
+        <div className="container narrow center">
           <div className="logo-offer">
             <img src="/images/oferta/logo-foco-em-harmonia.webp" alt="Foco em Harmonia" />
-            <p>Comece a desenvolver sua habilidade para dividir voz e viva essa transformação.</p>
           </div>
+          <div className="offer-price-block">
+            <p className="old-price">De: <s>R$397,00</s> Por apenas:</p>
+            <div className="price-installment">
+              <span className="price-times">12x</span>
+              <span className="price-value">R$&nbsp;10,13</span>
+            </div>
+            <p className="cash-price">ou <strong>R$ 97,00</strong> à vista</p>
+          </div>
+          <ul className="offer-list">
+            <li>✓ 7 módulos de aulas</li>
+            <li>✓ Comunidade exclusiva para alunos</li>
+            <li>✓ Módulo bônus: como achar seu tom</li>
+            <li>✓ Teste de extensão e classificação vocal</li>
+            <li>✓ Atividades práticas para o dia a dia</li>
+            <li>✓ Acesso vitalício</li>
+          </ul>
+          <a className="button primary wide" href={checkoutUrl} target="_blank" rel="noreferrer">QUERO APRENDER AGORA</a>
         </div>
       </section>
 

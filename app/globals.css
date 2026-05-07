@@ -105,17 +105,22 @@ p{line-height:1.7;margin-bottom:1rem;color:rgba(255,255,255,.85)}
 .trust-row.compact{font-size:.9rem;gap:1.5rem}
 .trust-row div{color:rgba(255,255,255,.8)}
 
-/* Offer */
+/* Offer section — premium centered */
 .offer-section{background:#111}
-.offer-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
-.old-price{color:rgba(255,255,255,.6);font-size:.9rem;margin-bottom:.25rem}
-.price{font-size:clamp(2rem,5vw,3rem);color:#f5c842;margin-bottom:.25rem}
-.cash-price{color:rgba(255,255,255,.7);font-size:.9rem;margin-bottom:1.5rem}
-.offer-list{list-style:none;display:flex;flex-direction:column;gap:.6rem;margin-bottom:1.5rem}
-.offer-list li{color:rgba(255,255,255,.85);font-size:.95rem}
-.logo-offer{text-align:center}
-.logo-offer img{max-width:220px;margin:0 auto 1.5rem}
-.logo-offer p{color:rgba(255,255,255,.7);font-size:.9rem}
+.offer-price-block{background:linear-gradient(135deg,rgba(245,200,66,.08) 0%,rgba(245,200,66,.03) 100%);border:1px solid rgba(245,200,66,.3);border-radius:20px;padding:2rem 2.5rem;margin:1.5rem auto;max-width:480px;text-align:center}
+.old-price{color:rgba(255,255,255,.5);font-size:1rem;margin-bottom:.5rem;text-align:center}
+.old-price s{color:rgba(255,255,255,.4)}
+.price-installment{display:flex;align-items:baseline;justify-content:center;gap:.4rem;margin:.5rem 0}
+.price-times{font-size:clamp(1.8rem,5vw,2.6rem);font-weight:800;color:#f5c842;line-height:1}
+.price-value{font-size:clamp(2.8rem,8vw,4.5rem);font-weight:900;color:#f5c842;line-height:1;letter-spacing:-1px}
+.cash-price{font-size:1.15rem;color:rgba(255,255,255,.7);margin-top:.75rem;text-align:center}
+.cash-price strong{color:#fff;font-size:1.3rem}
+.offer-list{list-style:none;display:flex;flex-direction:column;gap:.6rem;margin:0 auto 2rem;max-width:360px;text-align:left}
+.offer-list li{color:rgba(255,255,255,.85);font-size:1rem}
+.logo-offer{text-align:center;margin-bottom:1rem}
+.logo-offer img{max-width:180px;margin:0 auto}
+.logo-offer p{color:rgba(255,255,255,.6);font-size:.9rem;max-width:360px;margin:0 auto}
+.offer-grid{display:block}
 
 /* Guarantee */
 .guarantee{padding:4rem 1.5rem}
