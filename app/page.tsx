@@ -1,7 +1,7 @@
 const checkoutUrl = 'https://pay.kiwify.com.br/7FrQZOt'
 const whatsappUrl = 'https://wa.me/5571999999999'
-const videoComoDividirUrl = 'https://www.youtube.com/watch?v=F1pYjGMCqAM&t=7s'
-const videoViagemCursoUrl = 'https://youtu.be/yb-6zZv763k'
+const videoComoDividirUrl = 'https://www.youtube.com/embed/F1pYjGMCqAM?start=7'
+const videoViagemCursoUrl = 'https://www.youtube.com/embed/yb-6zZv763k'
 
 const benefits = [
   'Afinação firme e precisa.',
@@ -38,10 +38,15 @@ export default function Home() {
           <h1>Aprenda a Dividir Voz no Louvor com Segurança e Naturalidade, mesmo sem saber teoria musical</h1>
           <p className="lead">Um treinamento prático para desenvolver percepção, afinação e independência vocal — e finalmente cantar segunda voz com mais confiança no ministério de louvor.</p>
 
-          <a className="video-card" href={videoComoDividirUrl} target="_blank" aria-label="Assistir vídeo: Como dividir voz">
-            <img src="/images/videos/thumb-como-dividir-voz.webp" alt="Como dividir voz" />
-            <span className="play">▶</span>
-          </a>
+          <div className="video-wrapper">
+            <iframe
+              src={videoComoDividirUrl}
+              title="Como dividir voz"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            />
+          </div>
 
           <a className="button primary wide" href={checkoutUrl} target="_blank">EU QUERO AGORA</a>
 
@@ -70,7 +75,7 @@ export default function Home() {
 
       <section className="section transform-section">
         <div className="container split reverse-mobile">
-          <img className="feature-img" src="/images/produto/ cantor-transformacao.webp" alt="Cantor em transformação vocal" />
+          <img className="feature-img" src="/images/produto/cantor-transformacao.webp" alt="Cantor em transformação vocal" />
           <div>
             <h2>Sua voz pode ser a chave para <span>transformar sua vida!</span></h2>
             <p>O Foco em Harmonia foi criado para desbloquear sua habilidade de dividir vozes com um caminho simples, progressivo e fácil de aplicar.</p>
@@ -87,8 +92,8 @@ export default function Home() {
         <div className="container">
           <h2 className="black-title">No curso Foco em Harmonia, você vai dividir voz e desenvolver a sua percepção</h2>
           <div className="steps-grid">
-            <article className="step-card"><img src="/images/passos/ passo-1-afinacao.webp" alt="Passo 1" /><span>PASSO 01</span><h3>Firmar a afinação</h3><p>O primeiro passo é desenvolver estabilidade vocal para manter sua voz firme, mesmo ouvindo outra linha melódica ao mesmo tempo.</p></article>
-            <article className="step-card"><img src="/images/passos/ passo-2-segunda-voz.webp" alt="Passo 2" /><span>PASSO 02</span><h3>Aprender a segunda voz</h3><p>Depois de firmar a base, você aprende a construir a voz complementar com precisão e encaixe musical.</p></article>
+            <article className="step-card"><img src="/images/passos/passo-1-afinacao.webp" alt="Passo 1" /><span>PASSO 01</span><h3>Firmar a afinação</h3><p>O primeiro passo é desenvolver estabilidade vocal para manter sua voz firme, mesmo ouvindo outra linha melódica ao mesmo tempo.</p></article>
+            <article className="step-card"><img src="/images/passos/passo-2-segunda-voz.webp" alt="Passo 2" /><span>PASSO 02</span><h3>Aprender a segunda voz</h3><p>Depois de firmar a base, você aprende a construir a voz complementar com precisão e encaixe musical.</p></article>
             <article className="step-card"><img src="/images/passos/passo-3-intuicao.webp" alt="Passo 3" /><span>PASSO 03</span><h3>Desenvolver a intuição</h3><p>Com prática guiada, você passa a perceber caminhos naturais para harmonizar sem depender de alguém cantando no seu ouvido.</p></article>
           </div>
         </div>
@@ -98,9 +103,9 @@ export default function Home() {
         <div className="container">
           <h2>Veja os <span>Resultados que alguns dos nossos alunos</span> já alcançaram</h2>
           <div className="testimonial-grid">
-            <img src="/images/depoimentos/ depoimento-1.webp" alt="Depoimento 1" />
-            <img src="/images/depoimentos/ depoimento-2.webp" alt="Depoimento 2" />
-            <img src="/images/depoimentos/ depoimento-3.webp" alt="Depoimento 3" />
+            <img src="/images/depoimentos/depoimento-1.webp" alt="Depoimento 1" />
+            <img src="/images/depoimentos/depoimento-2.webp" alt="Depoimento 2" />
+            <img src="/images/depoimentos/depoimento-3.webp" alt="Depoimento 3" />
           </div>
         </div>
       </section>
@@ -117,10 +122,15 @@ export default function Home() {
 
       <section className="section dark center access-section">
         <div className="container narrow">
-          <a className="video-card small-video" href={videoViagemCursoUrl} target="_blank" aria-label="Assistir vídeo: Viagem pelo curso">
-            <img src="/images/videos/ thumb-viagem-pelo-curso.webp" alt="Viagem pelo curso" />
-            <span className="play">▶</span>
-          </a>
+          <div className="video-wrapper">
+            <iframe
+              src={videoViagemCursoUrl}
+              title="Viagem pelo curso"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            />
+          </div>
           <h2>Aprenda a <span>qualquer hora e em qualquer lugar!</span></h2>
           <h3>ACESSO VITALÍCIO</h3>
           <div className="trust-row compact"><div>✅ 7 Módulos Gravados</div><div>✅ Treinamento 100% online</div><div>✅ Aulas direto ao ponto</div></div>
@@ -149,7 +159,7 @@ export default function Home() {
 
       <section className="section guarantee dark">
         <div className="container split">
-          <img className="guarantee-img" src="/images/oferta/ garantia-7-dias.webp" alt="Garantia de 7 dias" />
+          <img className="guarantee-img" src="/images/oferta/garantia-7-dias.webp" alt="Garantia de 7 dias" />
           <div><h2>7 dias de garantia incondicional — <span>ou seu dinheiro de volta!</span></h2><p>Experimente o treinamento por 7 dias. Se entender que ele não é para você, basta solicitar o reembolso dentro do prazo de garantia.</p></div>
         </div>
       </section>
@@ -157,7 +167,7 @@ export default function Home() {
       <section className="section mentor-section">
         <div className="container split">
           <div><h2>Seu mentor vocal nessa jornada será <span>Marcos Cruz</span></h2><p>Marcos Cruz é músico profissional e professor de canto, técnica vocal e piano com mais de 15 anos de experiência. Já ajudou centenas de alunos a destravarem suas vozes e atua com treinamento vocal para grupos de louvor.</p><a className="button primary" href={checkoutUrl} target="_blank">FAZER PARTE</a></div>
-          <img className="mentor-img" src="/images/mentor/ marcos-cruz.webp" alt="Marcos Cruz" />
+          <img className="mentor-img" src="/images/mentor/marcos-cruz.webp" alt="Marcos Cruz" />
         </div>
       </section>
 
