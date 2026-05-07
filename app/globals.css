@@ -297,6 +297,11 @@ h2 span {
   display: none;
 }
 
+.carousel-track:focus-visible {
+  outline: 2px solid #f5c842;
+  outline-offset: 4px;
+}
+
 .carousel-slide {
   flex: 0 0 calc(33.333% - 1rem);
   scroll-snap-align: start;

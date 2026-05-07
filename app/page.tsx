@@ -74,7 +74,7 @@ export default function Home() {
               />
             ) : (
               <>
-                <img src="https://img.youtube.com/vi/F1pYjGMCqAM/maxresdefault.jpg" alt="Como dividir voz" />
+                <img src="https://img.youtube.com/vi/F1pYjGMCqAM/maxresdefault.jpg" alt="Como dividir voz" width="1280" height="720" />
                 <div className="video-play-btn">
                   <svg viewBox="0 0 68 48" fill="none"><rect width="68" height="48" rx="10" fill="#FF0000" /><polygon points="28,16 28,32 46,24" fill="white" /></svg>
                 </div>
@@ -151,7 +151,17 @@ export default function Home() {
             <button className="carousel-btn prev" aria-label="Anterior" onClick={() => {
               scrollTestimonials('prev')
             }}>&#8249;</button>
-            <div className="carousel-track" id="testimonial-track" ref={testimonialTrackRef}>
+            <div
+              className="carousel-track"
+              id="testimonial-track"
+              ref={testimonialTrackRef}
+              tabIndex={0}
+              aria-label="Carrossel de depoimentos"
+              onKeyDown={(event) => {
+                if (event.key === 'ArrowLeft') scrollTestimonials('prev')
+                if (event.key === 'ArrowRight') scrollTestimonials('next')
+              }}
+            >
               {testimonialImages.map((src, index) => (
                 <div className="carousel-slide" key={src}>
                   <img src={src} alt={`Depoimento ${index + 1}`} />
@@ -187,7 +197,7 @@ export default function Home() {
               />
             ) : (
               <>
-                <img src="https://img.youtube.com/vi/yb-6zZv763k/maxresdefault.jpg" alt="Viagem pelo curso" />
+                <img src="https://img.youtube.com/vi/yb-6zZv763k/maxresdefault.jpg" alt="Viagem pelo curso" width="1280" height="720" />
                 <div className="video-play-btn">
                   <svg viewBox="0 0 68 48" fill="none"><rect width="68" height="48" rx="10" fill="#FF0000" /><polygon points="28,16 28,32 46,24" fill="white" /></svg>
                 </div>
