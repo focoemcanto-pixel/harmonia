@@ -1,5 +1,7 @@
 const checkoutUrl = 'https://pay.kiwify.com.br/7FrQZOt'
 const whatsappUrl = 'https://wa.me/5571999999999'
+const videoComoDividirUrl = 'https://www.youtube.com/watch?v=F1pYjGMCqAM&t=7s'
+const videoViagemCursoUrl = 'https://youtu.be/yb-6zZv763k'
 
 const benefits = [
   'Afinação firme e precisa.',
@@ -36,10 +38,10 @@ export default function Home() {
           <h1>Aprenda a Dividir Voz no Louvor com Segurança e Naturalidade, mesmo sem saber teoria musical</h1>
           <p className="lead">Método testado e comprovado por centenas de alunos. O Foco em Harmonia ensina você a dominar a arte de cantar em segunda voz com um passo a passo simples e direto.</p>
 
-          <div className="video-card">
+          <a className="video-card" href={videoComoDividirUrl} target="_blank" aria-label="Assistir vídeo: Como dividir voz">
             <img src="/images/videos/thumb-como-dividir-voz.webp" alt="Como dividir voz" />
             <span className="play">▶</span>
-          </div>
+          </a>
 
           <a className="button primary wide" href={checkoutUrl} target="_blank">EU QUERO AGORA</a>
 
@@ -115,10 +117,10 @@ export default function Home() {
 
       <section className="section dark center">
         <div className="container narrow">
-          <div className="video-card small-video">
+          <a className="video-card small-video" href={videoViagemCursoUrl} target="_blank" aria-label="Assistir vídeo: Viagem pelo curso">
             <img src="/images/videos/ thumb-viagem-pelo-curso.webp" alt="Viagem pelo curso" />
             <span className="play">▶</span>
-          </div>
+          </a>
           <h2>Aprenda a <span>qualquer hora e em qualquer lugar!</span></h2>
           <h3>ACESSO VITALÍCIO</h3>
           <div className="trust-row compact"><div>✅ 7 Módulos Gravados</div><div>✅ Treinamento 100% online</div><div>✅ Aulas direto ao ponto</div></div>
