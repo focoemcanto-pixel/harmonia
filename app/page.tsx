@@ -155,12 +155,15 @@ export default function Home() {
             <img src="/images/oferta/logo-foco-em-harmonia.webp" alt="Foco em Harmonia" />
           </div>
           <div className="offer-price-block">
-            <p className="old-price">De: <s>R$397,00</s> Por apenas:</p>
+            <p className="offer-discount-badge">🔥 75% OFF</p>
+            <p className="old-price"><s>R$ 397,00</s></p>
+            <p className="price-drop-arrow" aria-hidden="true">▼</p>
             <div className="price-installment">
               <span className="price-times">12x</span>
               <span className="price-value">R$&nbsp;10,13</span>
             </div>
             <p className="cash-price">ou <strong>R$ 97,00</strong> à vista</p>
+            <p className="offer-savings">Você economiza R$ 300,00</p>
           </div>
           <ul className="offer-list">
             <li>✓ 7 módulos de aulas</li>
