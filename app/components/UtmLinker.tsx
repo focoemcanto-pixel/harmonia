@@ -4,7 +4,7 @@ import { useEffect } from 'react'
 import SmartSalesAssistant from './SmartSalesAssistant'
 
 const CHECKOUT_PREFIXES = ['https://pay.kiwify.com.br']
-const WHATSAPP_URL = 'https://wa.me/5571993392294'
+const WHATSAPP_URL = 'https://wa.me/5571996125869'
 
 function buildSck(): string {
   try {
