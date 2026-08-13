@@ -2,7 +2,7 @@
 
 import { FormEvent, useEffect, useMemo, useState } from 'react'
 
-const HUMAN_WHATSAPP = 'https://wa.me/5571993392294'
+const HUMAN_WHATSAPP = 'https://wa.me/5571996125869'
 const STOP = new Set(['a','o','os','as','de','da','do','das','dos','e','em','no','na','nos','nas','um','uma','para','por','com','que','qual','como','eu','voce','você','tem','é','eh'])
 type Msg = { role: 'bot' | 'user'; text: string }
 function norm(s:string){ return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9\s]/g,' ') }
